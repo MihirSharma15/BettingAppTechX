@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct WelcomeLogin_: View {
+    @State var Username: String
+    @State var Password: String
     var body: some View {
         VStack{
         
             ZStack {
-                Rectangle().fill(pSteelBlue).frame(width:600,height: 400).offset(x:-75,y:-400).rotationEffect(.degrees(7.0))
+                Rectangle().fill(pSteelBlue).frame(width:.infinity,height: .infinity).offset(x:0,y:0).rotationEffect(.degrees(0.0)).ignoresSafeArea()
                 VStack {
+                    
                     ZStack {
                         RoundedRectangle(cornerRadius: 15.0).foregroundStyle(pDarkPurple).frame(maxWidth:200, maxHeight: 50).shadow(radius: 20).opacity(0.7)
                         Text("UNC Bets")
@@ -26,10 +29,23 @@ struct WelcomeLogin_: View {
                         .font(.title3)
                         .fontWeight(.medium)
                         .padding([.top, .leading, .trailing])
-                    Spacer()
-                }
                     
+                    VStack {
+                        Image(systemName: "person.badge.shield.checkmark").resizable().frame(minWidth: 60,  maxWidth: 60, minHeight: 60, maxHeight: 60)
+                        
+                    }
+                    
+                    
+                    
+                }
+                
             }
+            
+            
+            
+            
+            
+            
             
             
             
@@ -40,5 +56,5 @@ struct WelcomeLogin_: View {
 }
 
 #Preview {
-    WelcomeLogin_()
+    WelcomeLogin_(Username: "Hello", Password: "Test123")
 }
