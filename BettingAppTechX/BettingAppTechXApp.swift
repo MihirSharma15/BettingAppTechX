@@ -11,7 +11,7 @@ import SwiftUI
 struct BettingAppTechXApp: App {
     var body: some Scene {
         WindowGroup {
-            WelcomeLogin_(Username: "Hi", Password: "Test")
+            WelcomeLogin_(Username: "", Password: "")
         }
     }
 }
