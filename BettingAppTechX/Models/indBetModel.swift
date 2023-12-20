@@ -11,18 +11,36 @@ import SwiftUI
 class IndividualBet: Identifiable, ObservableObject {
     
     var id = UUID()
-    var betName: String
+    var betText: String
     var betDesc: String
-    var likeCount: Int = 0
+    @Published var likeCount: Int = 0
     var datePub: Date
     
-    init(betName: String, betDesc: String) {
-        self.betName = betName
+    var dateMon: String
+    var dateDay: String
+    
+    init(betText: String, betDesc: String) {
+        self.betText = betText
         self.betDesc = betDesc
-        self.datePub = Date()
+        self.datePub = Date.now
+        self.dateMon = String(self.datePub.formatted(Date.FormatStyle().month(.abbreviated)))
+        self.dateDay = String(self.datePub.formatted(Date.FormatStyle().day(.defaultDigits)))
     }
     
     
     
 }
+
+class BetManagerClass: ObservableObject {
+    
+    @Published var betListArray: [IndividualBet]
+    init(betListArray: [IndividualBet]) {
+        self.betListArray = betListArray
+    }
+    
+    
+    
+}
+
+
 

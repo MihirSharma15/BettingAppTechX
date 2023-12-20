@@ -9,35 +9,36 @@ import SwiftUI
 
 struct indBetView: View {
     
-//    @State var indBet: IndividualBet
-    
+    @ObservedObject var indBet: IndividualBet
+    func increaseLike() {
+        indBet.likeCount += 1
+    }
     
     var body: some View {
         
         ZStack {
             
-            RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/).fill(LinearGradient(gradient: Gradient(colors: [pSteelBlue.opacity(1.2), pDarkPurple.opacity(0.3)]), startPoint: /*@START_MENU_TOKEN@*/.top/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.bottomTrailing/*@END_MENU_TOKEN@*/)).frame(maxWidth: .infinity, maxHeight: 100).shadow(radius: 10)
+            RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/).fill(LinearGradient(gradient: Gradient(colors: [pSteelBlue.opacity(1.2), pDarkPurple.opacity(0.3)]), startPoint: /*@START_MENU_TOKEN@*/.top/*@END_MENU_TOKEN@*/, endPoint: /*@START_MENU_TOKEN@*/.bottomTrailing/*@END_MENU_TOKEN@*/)).frame(width: .infinity, height: 100)
             HStack{
-//                Image(systemName: "moon.stars").resizable().frame(maxWidth: 50, maxHeight: 50).padding(.leading, 20)
                 VStack{
-                    Text("Dec")
+                    Text(indBet.dateMon)
                         .font(/*@START_MENU_TOKEN@*/.title3/*@END_MENU_TOKEN@*/)
                         .fontWeight(.light)
-                    Text("9")
+                    Text(indBet.dateDay)
                         .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                         .fontWeight(.thin)
-                }.padding(.horizontal)
+                }.padding(.leading)
                 
-                
+                RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/).fill().frame(width:2, height:60).opacity(0.6).padding(.horizontal, 5)
                 
                 VStack{
                     HStack {
-                        Text("Hello")
+                        Text(indBet.betText)
                             .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                         Spacer()
                     }
                     HStack {
-                        Text("Really")
+                        Text(indBet.betDesc)
                             .font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/)
                             .fontWeight(.thin)
                         Spacer()
@@ -47,8 +48,15 @@ struct indBetView: View {
                         
                 }
                 Spacer()
+                Button(action: {increaseLike()}, label: {
+                    HStack{
+                        Text(String(indBet.likeCount))
+                            .font(.title3)
+                        Image(systemName: "flame").resizable().aspectRatio(contentMode: .fit).frame(maxWidth: 40, maxHeight: 40).padding(.trailing)
+                        
+                    }.foregroundStyle(.black)
+                })
                 
-                Text("Hello")
             }
             
         }.padding(.horizontal)
@@ -59,5 +67,5 @@ struct indBetView: View {
 }
 
 #Preview {
-    indBetView()
+    indBetView(indBet: IndividualBet(betText: "SampleText", betDesc: "SampleDesc."))
 }
