@@ -52,7 +52,7 @@ struct MainUXBetting_Screen: View {
                 }.frame(maxWidth: .infinity, maxHeight: 700).padding(.horizontal)
                 
                 Spacer()
-                Button(action: {toggleBetMenu()}, label: {
+                Button(action: {withAnimation(Animation.easeInOut){toggleBetMenu()}}, label: {
                     ZStack {
                         
                         RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
@@ -76,7 +76,7 @@ struct MainUXBetting_Screen: View {
                         VStack{
                             HStack{
                                 Spacer()
-                                Button(action: {toggleBetMenu()}, label: {
+                                Button(action: {withAnimation(Animation.easeInOut(duration: 0.7)){toggleBetMenu()}}, label: {
                                     Image(systemName: "xmark").resizable().aspectRatio(contentMode: .fit).frame(width:30, height:30).foregroundStyle(.white).padding(.trailing,30)
                                 })
                             }.padding(.all)
@@ -91,7 +91,7 @@ struct MainUXBetting_Screen: View {
                         
                     }
                     
-                }
+                }.transition(.move(edge: .bottom))
             }
         })
     }
