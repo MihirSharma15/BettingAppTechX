@@ -5,6 +5,7 @@
 //  Created by Mihir Sharma on 12/19/23.
 //
 
+
 import SwiftUI
 
 struct MainUXBetting_Screen: View {
@@ -44,8 +45,8 @@ struct MainUXBetting_Screen: View {
                 Button(action: {}, label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
-                            .fill(pDarkPurple).frame(width:.infinity, height:100)
-                            
+                            .fill(pDarkPurple).frame(width: .infinity, height:100)
+                        
                         Image(systemName: "plus.app")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
@@ -55,7 +56,7 @@ struct MainUXBetting_Screen: View {
                 })
                 
             }
-        }
+        }.navigationBarBackButtonHidden(true)
     }
 }
 
