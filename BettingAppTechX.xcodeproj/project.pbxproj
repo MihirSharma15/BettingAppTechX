@@ -14,6 +14,8 @@
 		32F3D03D2B31844A006DF5E6 /* ColorPallete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F3D03C2B31844A006DF5E6 /* ColorPallete.swift */; };
 		32F3D03F2B324D6A006DF5E6 /* WelcomeLogin .swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F3D03E2B324D6A006DF5E6 /* WelcomeLogin .swift */; };
 		32F3D0412B3250E9006DF5E6 /* MainUXBetting Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F3D0402B3250E9006DF5E6 /* MainUXBetting Screen.swift */; };
+		32F3D0432B327D85006DF5E6 /* indBetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F3D0422B327D85006DF5E6 /* indBetModel.swift */; };
+		32F3D0462B32836B006DF5E6 /* indBetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F3D0452B32836B006DF5E6 /* indBetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,9 @@
 		32F3D03C2B31844A006DF5E6 /* ColorPallete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPallete.swift; sourceTree = "<group>"; };
 		32F3D03E2B324D6A006DF5E6 /* WelcomeLogin .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WelcomeLogin .swift"; sourceTree = "<group>"; };
 		32F3D0402B3250E9006DF5E6 /* MainUXBetting Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainUXBetting Screen.swift"; sourceTree = "<group>"; };
+		32F3D0422B327D85006DF5E6 /* indBetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = indBetModel.swift; sourceTree = "<group>"; };
+		32F3D0442B32818E006DF5E6 /* Test.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Test.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		32F3D0452B32836B006DF5E6 /* indBetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = indBetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +83,9 @@
 		32F3D0382B318277006DF5E6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				32F3D03E2B324D6A006DF5E6 /* WelcomeLogin .swift */,
+				32F3D0402B3250E9006DF5E6 /* MainUXBetting Screen.swift */,
+				32F3D0452B32836B006DF5E6 /* indBetView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -86,8 +94,8 @@
 			isa = PBXGroup;
 			children = (
 				32F3D03C2B31844A006DF5E6 /* ColorPallete.swift */,
-				32F3D03E2B324D6A006DF5E6 /* WelcomeLogin .swift */,
-				32F3D0402B3250E9006DF5E6 /* MainUXBetting Screen.swift */,
+				32F3D0422B327D85006DF5E6 /* indBetModel.swift */,
+				32F3D0442B32818E006DF5E6 /* Test.playground */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -164,7 +172,9 @@
 			files = (
 				32F3D02D2B31810C006DF5E6 /* ContentView.swift in Sources */,
 				32F3D02B2B31810C006DF5E6 /* BettingAppTechXApp.swift in Sources */,
+				32F3D0462B32836B006DF5E6 /* indBetView.swift in Sources */,
 				32F3D03D2B31844A006DF5E6 /* ColorPallete.swift in Sources */,
+				32F3D0432B327D85006DF5E6 /* indBetModel.swift in Sources */,
 				32F3D03F2B324D6A006DF5E6 /* WelcomeLogin .swift in Sources */,
 				32F3D0412B3250E9006DF5E6 /* MainUXBetting Screen.swift in Sources */,
 			);

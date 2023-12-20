@@ -25,12 +25,14 @@ struct MainUXBetting_Screen: View {
                     
                 }.padding(.horizontal).offset(y:-15)
                 
-                Spacer()
+                
                 
                 ScrollView{
-                    Rectangle()
-                }.frame(maxHeight: 500)
+                    Text("hi")
+                    
+                }.frame(maxWidth: .infinity, maxHeight: 400).background(Color.red).padding(.horizontal)
                 
+                Spacer()
             }
         }
     }
