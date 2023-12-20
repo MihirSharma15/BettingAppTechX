@@ -11,7 +11,17 @@ import SwiftUI
 struct MainUXBetting_Screen: View {
     
     @ObservedObject var betList: BetManagerClass
+    
     let sampleArray: [IndividualBet] = [IndividualBet(betText: "Example1", betDesc: "Desc1"),IndividualBet(betText: "Example2", betDesc: "Desc2"),IndividualBet(betText: "Example3", betDesc: "Desc3"),IndividualBet(betText: "Example1", betDesc: "Desc1"),IndividualBet(betText: "Example2", betDesc: "Desc2"),IndividualBet(betText: "Example3", betDesc: "Desc3"),IndividualBet(betText: "Example1", betDesc: "Desc1"),IndividualBet(betText: "Example2", betDesc: "Desc2"),IndividualBet(betText: "Example3", betDesc: "Desc3")]
+    
+    @State var addBetToggle: Bool = false
+    @State var Test: String
+    
+    func toggleBetMenu() {
+        addBetToggle.toggle()
+    }
+    
+    
     var body: some View {
         
         ZStack {
@@ -42,8 +52,9 @@ struct MainUXBetting_Screen: View {
                 }.frame(maxWidth: .infinity, maxHeight: 700).padding(.horizontal)
                 
                 Spacer()
-                Button(action: {}, label: {
+                Button(action: {toggleBetMenu()}, label: {
                     ZStack {
+                        
                         RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
                             .fill(pDarkPurple).frame(width: .infinity, height:100)
                         
@@ -56,10 +67,36 @@ struct MainUXBetting_Screen: View {
                 })
                 
             }
-        }.navigationBarBackButtonHidden(true)
+        }.navigationBarBackButtonHidden(true).overlay(Group{
+            if addBetToggle {
+                VStack {
+                    Spacer()
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 25).fill(pDarkPurple).padding([.top, .leading, .trailing]).ignoresSafeArea().frame(height:400)
+                        VStack{
+                            HStack{
+                                Spacer()
+                                Button(action: {toggleBetMenu()}, label: {
+                                    Image(systemName: "xmark").resizable().aspectRatio(contentMode: .fit).frame(width:30, height:30).foregroundStyle(.white).padding(.trailing,30)
+                                })
+                            }.padding(.all)
+                            Text("Add Bet").font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/).foregroundStyle(.white)
+                            RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/).fill(.white).padding([.leading, .bottom, .trailing]).frame(maxWidth: 250, maxHeight: 18)
+                            TextField("Bet Title", text: $Test).padding(.all).frame(width:300, height:50).background(Color.white).cornerRadius(10)
+                            TextField("Bet Description", text: $Test).padding(.all).frame(width:300, height:50).background(Color.white).cornerRadius(10)
+                            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                                Text("Post Bet").font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/).fontWeight(.light).tint(.white).frame(width: 300, height:50).background(pCrimson).cornerRadius(10).padding(.top)
+                            })
+                        }
+                        
+                    }
+                    
+                }
+            }
+        })
     }
 }
 
 #Preview {
-    MainUXBetting_Screen(betList: BetManagerClass(betListArray: [IndividualBet(betText: "Example1", betDesc: "Desc1"),IndividualBet(betText: "Example2", betDesc: "Desc2"),IndividualBet(betText: "Example3", betDesc: "Desc3")]))
+    MainUXBetting_Screen(betList: BetManagerClass(betListArray: [IndividualBet(betText: "Example1", betDesc: "Desc1"),IndividualBet(betText: "Example2", betDesc: "Desc2"),IndividualBet(betText: "Example3", betDesc: "Desc3")]), Test: "")
 }

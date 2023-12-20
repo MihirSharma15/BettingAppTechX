@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		325A7B822B32D9B40058503E /* SampleAddBet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325A7B812B32D9B40058503E /* SampleAddBet.swift */; };
 		32F3D02B2B31810C006DF5E6 /* BettingAppTechXApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F3D02A2B31810C006DF5E6 /* BettingAppTechXApp.swift */; };
 		32F3D02D2B31810C006DF5E6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F3D02C2B31810C006DF5E6 /* ContentView.swift */; };
 		32F3D02F2B31810D006DF5E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32F3D02E2B31810D006DF5E6 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		325A7B812B32D9B40058503E /* SampleAddBet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleAddBet.swift; sourceTree = "<group>"; };
 		32F3D0272B31810C006DF5E6 /* BettingAppTechX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BettingAppTechX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32F3D02A2B31810C006DF5E6 /* BettingAppTechXApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BettingAppTechXApp.swift; sourceTree = "<group>"; };
 		32F3D02C2B31810C006DF5E6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			children = (
 				32F3D03E2B324D6A006DF5E6 /* WelcomeLogin .swift */,
 				32F3D0402B3250E9006DF5E6 /* MainUXBetting Screen.swift */,
+				325A7B812B32D9B40058503E /* SampleAddBet.swift */,
 				32F3D0452B32836B006DF5E6 /* indBetView.swift */,
 			);
 			path = Views;
@@ -173,6 +176,7 @@
 				32F3D02D2B31810C006DF5E6 /* ContentView.swift in Sources */,
 				32F3D02B2B31810C006DF5E6 /* BettingAppTechXApp.swift in Sources */,
 				32F3D0462B32836B006DF5E6 /* indBetView.swift in Sources */,
+				325A7B822B32D9B40058503E /* SampleAddBet.swift in Sources */,
 				32F3D03D2B31844A006DF5E6 /* ColorPallete.swift in Sources */,
 				32F3D0432B327D85006DF5E6 /* indBetModel.swift in Sources */,
 				32F3D03F2B324D6A006DF5E6 /* WelcomeLogin .swift in Sources */,
