@@ -13,6 +13,7 @@ class IndividualBet: Identifiable, ObservableObject {
     var id = UUID()
     var betText: String
     var betDesc: String
+    var payout: Float = 0
     @Published var likeCount: Int = 0
     var datePub: Date
     

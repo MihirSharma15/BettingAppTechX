@@ -57,7 +57,7 @@ struct WelcomeLogin_: View {
                         TextField("Username", text: $Username).padding(.all).frame(width:300, height:50).background(Color.black.opacity(0.1)).cornerRadius(10)
                         SecureField("Password", text: $Password).padding(.all).frame(width:300, height:50).background(Color.black.opacity(0.1)).cornerRadius(10)
                         NavigationLink{
-                            MainUXBetting_Screen(betList: BetManagerClass(betListArray: sampleArray2),Test: "")
+                            MainUXBetting_Screen(betList: BetManagerClass(betListArray: sampleArray2))
                         } label: {
                             
                             Text("Login").foregroundColor(.white).frame(width:300,height:50).background(pSteelBlue).cornerRadius(10)

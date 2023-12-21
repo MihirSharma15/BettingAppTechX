@@ -12,13 +12,24 @@ struct MainUXBetting_Screen: View {
     
     @ObservedObject var betList: BetManagerClass
     
-    let sampleArray: [IndividualBet] = [IndividualBet(betText: "Example1", betDesc: "Desc1"),IndividualBet(betText: "Example2", betDesc: "Desc2"),IndividualBet(betText: "Example3", betDesc: "Desc3"),IndividualBet(betText: "Example1", betDesc: "Desc1"),IndividualBet(betText: "Example2", betDesc: "Desc2"),IndividualBet(betText: "Example3", betDesc: "Desc3"),IndividualBet(betText: "Example1", betDesc: "Desc1"),IndividualBet(betText: "Example2", betDesc: "Desc2"),IndividualBet(betText: "Example3", betDesc: "Desc3")]
+    @State var newBetTitle: String = ""
+    @State var newBetDesc: String = ""
+    
+    let sampleArray: [IndividualBet] = [IndividualBet(betText: "Example1", betDesc: "Desc1"),IndividualBet(betText: "Example2", betDesc: "Desc2"),IndividualBet(betText: "Example3", betDesc: "Desc3")]
     
     @State var addBetToggle: Bool = false
-    @State var Test: String
     
     func toggleBetMenu() {
         addBetToggle.toggle()
+    }
+    
+    func addNewBetFunc() {
+        
+        
+        betList.betListArray.append(IndividualBet(betText: newBetTitle, betDesc: newBetDesc))
+        newBetTitle = ""
+        newBetDesc = ""
+        
     }
     
     
@@ -44,7 +55,14 @@ struct MainUXBetting_Screen: View {
                 
                 ScrollView{
                     VStack {
-                        ForEach(sampleArray, id: \.id) {item in indBetView(indBet: item)
+                        ForEach(betList.betListArray, id: \.id) {item in indBetView(indBet: item).overlay(
+                            Group{
+                                Rectangle()
+                            }
+                        
+                        
+                        )
+                            
                             
                         }
                     }
@@ -52,7 +70,7 @@ struct MainUXBetting_Screen: View {
                 }.frame(maxWidth: .infinity, maxHeight: 700).padding(.horizontal)
                 
                 Spacer()
-                Button(action: {withAnimation(Animation.easeInOut){toggleBetMenu()}}, label: {
+                Button(action: 	{withAnimation(Animation.easeInOut){toggleBetMenu()}}, label: {
                     ZStack {
                         
                         RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
@@ -82,9 +100,17 @@ struct MainUXBetting_Screen: View {
                             }.padding(.all)
                             Text("Add Bet").font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/).foregroundStyle(.white)
                             RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/).fill(.white).padding([.leading, .bottom, .trailing]).frame(maxWidth: 250, maxHeight: 18)
-                            TextField("Bet Title", text: $Test).padding(.all).frame(width:300, height:50).background(Color.white).cornerRadius(10)
-                            TextField("Bet Description", text: $Test).padding(.all).frame(width:300, height:50).background(Color.white).cornerRadius(10)
-                            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                            
+                            TextField("Bet Title", text: $newBetTitle).padding(.all).frame(width:300, height:50).background(Color.white).cornerRadius(10)
+                            
+                            TextField("Bet Description", text: $newBetDesc).padding(.all).frame(width:300, height:50).background(Color.white).cornerRadius(10)
+                            
+                            Button(action: {
+                                
+                                addNewBetFunc()
+                                withAnimation(Animation.easeInOut){toggleBetMenu()}
+                                
+                            }, label: {
                                 Text("Post Bet").font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/).fontWeight(.light).tint(.white).frame(width: 300, height:50).background(pCrimson).cornerRadius(10).padding(.top)
                             })
                         }
@@ -98,5 +124,5 @@ struct MainUXBetting_Screen: View {
 }
 
 #Preview {
-    MainUXBetting_Screen(betList: BetManagerClass(betListArray: [IndividualBet(betText: "Example1", betDesc: "Desc1"),IndividualBet(betText: "Example2", betDesc: "Desc2"),IndividualBet(betText: "Example3", betDesc: "Desc3")]), Test: "")
+    MainUXBetting_Screen(betList: BetManagerClass(betListArray: []))
 }
