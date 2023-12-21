@@ -65,7 +65,6 @@ struct MainUXBetting_Screen: View {
                         }
                         }
                     }
-
                 }.frame(maxWidth: .infinity, maxHeight: 700).padding(.horizontal).overlay(Group{
                     if moreInfoToggle {
                         
