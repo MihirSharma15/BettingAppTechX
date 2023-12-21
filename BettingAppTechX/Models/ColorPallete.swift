@@ -34,7 +34,6 @@ extension Color {
         )
     }
 }
-
 var pCrimson: Color = Color(hex: "#D72638")
 let pSteelBlue: Color = Color(hex: "#3F88C5")
 let pOrange: Color = Color(hex: "#F49D37")
