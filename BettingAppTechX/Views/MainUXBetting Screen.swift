@@ -10,26 +10,30 @@ import SwiftUI
 
 struct MainUXBetting_Screen: View {
     
+    let sampleArray: [IndividualBet] = [IndividualBet(betText: "Example1", betDesc: "Desc1"),IndividualBet(betText: "Example2", betDesc: "Desc2"),IndividualBet(betText: "Example3", betDesc: "Desc3")]
+
+    
     @ObservedObject var betList: BetManagerClass
     
     @State var newBetTitle: String = ""
     @State var newBetDesc: String = ""
     
-    let sampleArray: [IndividualBet] = [IndividualBet(betText: "Example1", betDesc: "Desc1"),IndividualBet(betText: "Example2", betDesc: "Desc2"),IndividualBet(betText: "Example3", betDesc: "Desc3")]
     
     @State var addBetToggle: Bool = false
+    @State var viewMoreInfoToggle: Bool = false
     
     func toggleBetMenu() {
         addBetToggle.toggle()
     }
     
+    func toggleMoreInfo() {
+        viewMoreInfoToggle.toggle()
+    }
+    
     func addNewBetFunc() {
-        
-        
         betList.betListArray.append(IndividualBet(betText: newBetTitle, betDesc: newBetDesc))
         newBetTitle = ""
         newBetDesc = ""
-        
     }
     
     
@@ -55,16 +59,7 @@ struct MainUXBetting_Screen: View {
                 
                 ScrollView{
                     VStack {
-                        ForEach(betList.betListArray, id: \.id) {item in indBetView(indBet: item).overlay(
-                            Group{
-                                Rectangle()
-                            }
-                        
-                        
-                        )
-                            
-                            
-                        }
+                        ForEach(betList.betListArray, id: \.id) {item in indBetView(indBet: item)
                     }
                     
                 }.frame(maxWidth: .infinity, maxHeight: 700).padding(.horizontal)
