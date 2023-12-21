@@ -55,7 +55,6 @@ struct MainUXBetting_Screen: View {
                 }.padding(.horizontal).offset(y:-15)
                 
                 
-                
                 ScrollView{
                     VStack {
                         ForEach(betList.betListArray, id: \.id) {item in indBetView(indBet: item).onTapGesture {
