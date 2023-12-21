@@ -41,4 +41,3 @@ let pOrange: Color = Color(hex: "#F49D37")
 let pDarkPurple: Color = Color(hex: "#140F2D")
 let pRed: Color = Color(hex: "#F22B29")
 
-
