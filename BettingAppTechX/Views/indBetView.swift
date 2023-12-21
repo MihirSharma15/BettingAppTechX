@@ -10,6 +10,9 @@ import SwiftUI
 struct indBetView: View {
     
     @ObservedObject var indBet: IndividualBet
+    
+    @State var openMoreInfo: Bool = false
+    
     func increaseLike() {
         indBet.likeCount += 1
     }
