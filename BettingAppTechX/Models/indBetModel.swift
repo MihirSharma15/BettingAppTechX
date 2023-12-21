@@ -9,7 +9,6 @@ import Foundation
 import SwiftUI
 
 class IndividualBet: Identifiable, ObservableObject {
-    
     var id = UUID()
     var betText: String
     var betDesc: String
