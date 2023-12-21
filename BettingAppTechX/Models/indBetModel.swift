@@ -28,7 +28,6 @@ class IndividualBet: Identifiable, ObservableObject {
     }
     
     
-    
 }
 
 class BetManagerClass: ObservableObject {
