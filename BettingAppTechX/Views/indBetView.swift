@@ -43,8 +43,7 @@ struct indBetView: View {
                             .fontWeight(.thin)
                         Spacer()
                     }
-                
-                    
+
                         
                 }
                 Spacer()

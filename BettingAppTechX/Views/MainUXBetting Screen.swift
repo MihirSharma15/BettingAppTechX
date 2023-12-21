@@ -25,7 +25,6 @@ struct MainUXBetting_Screen: View {
     
     func addNewBetFunc() {
         
-        
         betList.betListArray.append(IndividualBet(betText: newBetTitle, betDesc: newBetDesc))
         newBetTitle = ""
         newBetDesc = ""
@@ -55,15 +54,7 @@ struct MainUXBetting_Screen: View {
                 
                 ScrollView{
                     VStack {
-                        ForEach(betList.betListArray, id: \.id) {item in indBetView(indBet: item).overlay(
-                            Group{
-                                Rectangle()
-                            }
-                        
-                        
-                        )
-                            
-                            
+                        ForEach(betList.betListArray, id: \.id) {item in indBetView(indBet: item)
                         }
                     }
                     
